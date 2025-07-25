@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <!-- Cold Start Loading Overlay -->
+<div id="loadingOverlay" class="fixed inset-0 flex flex-col gap-4 items-center justify-center bg-zinc-900 text-white text-xl z-50 px-4 text-center">
+  <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-400 border-opacity-50"></div>
+  
+  <p class="text-xl sm:text-xl md:text-2xl font-semibold">
+    Loading the app... ⏳
+  </p>
+  
+  <p class="text-xl sm:text-base text-gray-400 max-w-md">
+    👋 This project is hosted on a free server (Render), which may take 10–30 seconds to start after inactivity (Cold Start). Thanks for your patience.
+  </p>
+</div>
+
+
+  <div id="appContent" style="display:none;">
+    <div class="min-h-screen w-screen bg-zinc-900 flex justify-center items-center p-4">
+      <div class="w-full max-w-sm bg-zinc-700 p-6 rounded-lg shadow-lg">
+        <h2 class="font-bold text-2xl text-center text-blue-300 mb-4">Create Account</h2>
+        <form action="/register" method="post" class="space-y-4">
+          <input class="text-white bg-transparent border-2 border-gray-600 rounded-lg outline-none w-full h-10 px-2"
+            type="text" placeholder="Enter name" name="name">
+          <input class="text-white bg-transparent border-2 border-gray-600 rounded-lg outline-none w-full h-10 px-2"
+            type="text" placeholder="Enter username" name="username">
+          <input class="text-white bg-transparent border-2 border-gray-600 rounded-lg outline-none w-full h-10 px-2"
+            type="number" placeholder="Enter age" name="age">
+          <input class="text-white bg-transparent border-2 border-gray-600 rounded-lg outline-none w-full h-10 px-2"
+            type="email" placeholder="Enter email" name="email">
+          <input class="text-white bg-transparent border-2 border-gray-600 rounded-lg outline-none w-full h-10 px-2"
+            type="password" placeholder="Enter password" name="password">
+          <button
+            class="w-full bg-blue-500 hover:bg-blue-600 rounded-lg text-white py-2 font-semibold transition duration-200"
+            type="submit">
+            Create Account
+          </button>
+          <a class="block text-center text-blue-300 hover:text-blue-500 underline" href="/login">Already registered</a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    window.addEventListener('load', function() {
+      const lastVisit = localStorage.getItem('lastVisit');
+      const now = Date.now();
+
+      if (!lastVisit || now - lastVisit > 15 * 60 * 1000) {
+        // Cold start: show loading up to 30 seconds max
+
+        const maxLoadingTime = 30000; // 30 seconds
+
+        function showContent() {
+          clearTimeout(timeoutId);
+          document.getElementById('loadingOverlay').style.display = 'none';
+          document.getElementById('appContent').style.display = 'block';
+        }
+
+        const timeoutId = setTimeout(showContent, maxLoadingTime);
+
+        // Hide loading immediately since page finished loading
+        showContent();
+
+      } else {
+        // Normal visit: show content immediately
+        document.getElementById('loadingOverlay').style.display = 'none';
+        document.getElementById('appContent').style.display = 'block';
+      }
+
+      localStorage.setItem('lastVisit', now);
+    });
+  </script>
+
+</body>
+
+</html>

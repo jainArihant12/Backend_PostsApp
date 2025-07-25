@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post Page</title>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  
+</head>
+<body>
+   <div class="min-h-screen bg-zinc-900 flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-zinc-800 p-6 rounded-lg shadow-lg">
+    <h5 class="text-white text-md mb-4">You can Edit Post:</h5>
+
+    <form action="/update/<%= post._id %>" method="post" class="space-y-4">
+      <textarea 
+        class="w-full text-white bg-transparent border-2 border-gray-600 rounded-lg p-2 resize-none" 
+        name="content" 
+        placeholder="What's on your mind"></textarea>
+
+      <button 
+        type="submit" 
+        class="w-full bg-yellow-400 hover:bg-yellow-500 rounded-lg text-white py-2 font-semibold transition duration-200">
+        Submit
+      </button>
+    </form>
+
+    <hr class="border-gray-300 mt-6">
+  </div>
+</div>
+
+</body>
+</html>

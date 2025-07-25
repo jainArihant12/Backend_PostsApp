@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-900">
+     <div class="bg-zinc-900 h-screen p-4">
+                <h3 class="text-2xl text-white "> Posts</h3>
+                <% posts.reverse().forEach(function(post){ %>
+                <div class = "postcontainer  bg-zinc-700 my-4 p-4 rounded-lg">
+                    <h4 class="text-gray-400">@<%= post.user.username%></h4>
+                    <small class="text-blue-400"><%= post.likes.length%> Likes</small>
+                    <p class="text-white "><%= post.content %> </p>
+                     <button type="submit" class="bg-white-400 rounded-lg text-blue-300 py-2 px-2 my-2"><a href="/Like/<%= post._id%>"><%= post.likes.indexOf(currentUser.userid)===-1 ? "Like" : "Unlike" %></a></button>
+                </div>
+
+                <% })%>
+                <button class="bg-yellow-400 rounded-lg text-white py-2 px-2 my-2"><a href="/profile">Go back</a></button>
+            </div>
+</body>
+</html>

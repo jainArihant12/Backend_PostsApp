@@ -1,0 +1,7 @@
+user post likh payeega
+login and register
+logout
+users create karne hai
+post creation
+post like
+post delete
