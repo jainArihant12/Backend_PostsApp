@@ -6,14 +6,28 @@ Users can register, login, create/edit/delete posts, like posts, and upload prof
 
 ## Screenshots
 
+<h4>Profile Page</h4>
+<img src="./DemoScreenshot/Profile.png" alt="profile page" width="600"/>
 
----
+<h4>Feeds Page</h4>
+<img src="./DemoScreenshot/feed.png" alt="feed page" width="600"/>
+
+<table>
+  <tr>
+    <td><h4>Register Page</h4></td>
+    <td><h4>Login Page</h4></td>
+  </tr>
+  <tr>
+    <td><img src="./DemoScreenshot/register.png" alt="Register Page" width="300"/></td>
+    <td><img src="./DemoScreenshot/login.png" alt="Login Page" width="300"/></td>
+  </tr>
+</table>
 
 ---
 
 ## Demo
 
-Try the live demo here: [https://your-demo-link.onrender.com](https://your-demo-link.onrender.com)
+Try the live demo here: [ClicK Here](https://backend-postsapp.onrender.com)
 
 ---
 
