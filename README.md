@@ -27,7 +27,10 @@ Users can register, login, create/edit/delete posts, like posts, and upload prof
 
 ## Demo
 
-Try the live demo here: [ClicK Here](https://backend-postsapp.onrender.com)
+Try the live demo here: [Click Here](https://backend-postsapp.onrender.com)
+
+It may take some time due to free hosting (Cold Start)
+Please Wait
 
 ---
 
